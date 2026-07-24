@@ -1,10 +1,49 @@
+# --- SECRETS & ENV (CRITICAL) ---
 .env
-__pycache__/
-*.pyc
-.venv/
-venv/
-report*.json
-audit-report*.json
+.env.local
+.env.*.local
 *.pem
 *.key
+azure-credentials.json
+service-principal.json
+secrets.json
+
+# --- PYTHON ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# --- AZURE AI & AUDIT SPECIFIC ---
+# Audit reports often contain sensitive data or PII - keep them local unless sanitized
+report*.json
+audit-report*.json
+!report*.example.json  # Allow sanitized examples
+
+# Large model artifacts & caches
+*.onnx
+*.pth
+*.pt
+*.bin
+.model_cache/
+.huggingface/
+
+# Azure CLI local profiles (contains tenant/subscription info)
+.azure/
+*.azureprofile
+
+# --- TERRAFORM (If you use IaC) ---
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfplan
+# NOTE: Commit .terraform.lock.hcl
+
+# --- OS ---
 .DS_Store
+Thumbs.db   
