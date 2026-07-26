@@ -1,8 +1,8 @@
 """
 azure_audit.py — Azure Infrastructure AI Security Auditor
 ==========================================================
-Author: CS
-GitHub: github.com/BobboB
+Author: C Solo
+GitHub: github.com/ApepC
 
 Connects to a live Azure subscription, audits resources for
 security misconfigurations, and uses the Anthropic Claude API
